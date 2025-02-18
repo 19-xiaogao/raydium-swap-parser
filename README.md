@@ -1,41 +1,65 @@
-Solana Raydium Swap Transaction Parser
+# Solana Raydium Swap Transaction Parser
 
-Overview
+## 🚀 Project Overview
 
-A comprehensive JavaScript utility for parsing and analyzing Raydium Decentralized Exchange (DEX) transactions on the Solana blockchain. This tool provides deep insights into token swap transactions, extracting detailed transaction information.
+The Solana Raydium Swap Transaction Parser is a powerful JavaScript utility designed to decode and analyze token swap transactions on the Raydium Decentralized Exchange (DEX) within the Solana blockchain ecosystem.
 
+## ✨ Features
 
-Key Features
+- 🔍 Parse complex Raydium swap transaction signatures
+- 📊 Extract detailed token transfer information
+- 🔄 Identify transaction types (buy/sell)
+- 💱 Calculate precise token swap amounts
+- 🛡️ Robust error handling and transaction validation
 
-Parse Raydium transaction signatures
-Extract token transfer details
-Identify buy/sell transaction types
-Calculate token swap amounts
-Support analysis for major token pairs
+## 📦 Prerequisites
 
-Technical Capabilities
+- Node.js (v14+ recommended)
+- `@solana/web3.js` library
 
-Decode complex Solana transaction structures
-Retrieve precise token exchange details
-Analyze liquidity pool changes
-Provide comprehensive transaction metadata
+## 🛠️ Installation
 
-Dependencies
-
-@solana/web3.js
-
-Installation
-
-```
+```bash
+# Install dependencies
 npm install @solana/web3.js
+
+# Clone the repository
+git clone https://github.com/yourusername/raydium-swap-parser.git
+cd raydium-swap-parser
 ```
+## 💻 Usage Example
 
-Quick Start
+```js
+async function main() {
+  const txSignature = "YOUR_TRANSACTION_SIGNATURE";
+  try {
+    const result = await parseRaydiumSwapTransaction(txSignature);
+    const swapDetails = formatSwapMessage(result.tokenTransfers);
+    console.log(swapDetails);
+  } catch (error) {
+    console.error("Transaction parsing failed:", error);
+  }
+}
 
 ```
-// Basic usage example
-const txSignature = "YOUR_TRANSACTION_SIGNATURE";
-const result = await parseRaydiumSwapTransaction(txSignature);
-console.log(formatSwapMessage(result.tokenTransfers));
+## 🔬 Core Functions
 
+### parseRaydiumSwapTransaction(txSignature)
+
+- Parses Solana transaction details
+- Extracts token transfer information
+- Supports confirmed transactions
+
+### formatSwapMessage(tokenTransfers)
+
+- Identifies transaction type (buy/sell)
+- Calculates swap amounts
+- Provides token mint addresses
+
+## 🔧 Configuration
+```js
+// Configure Solana RPC endpoint
+const connection = new Connection("YOUR_SOLANA_RPC_ENDPOINT", {
+  commitment: "confirmed"
+});
 ```

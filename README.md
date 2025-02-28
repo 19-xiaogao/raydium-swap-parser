@@ -24,7 +24,7 @@ The Solana Raydium Swap Transaction Parser is a powerful JavaScript utility desi
 npm install @solana/web3.js
 
 # Clone the repository
-git clone https://github.com/yourusername/raydium-swap-parser.git
+git clone https://github.com/19-xiaogao/raydium-swap-parser.git
 cd raydium-swap-parser
 ```
 ## 💻 Usage Example
